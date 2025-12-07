@@ -1,11 +1,45 @@
-# tpdatarest
-- Use the Spring Data Rest starter to expose a model within the Rest architecture.
-- Use Spring Data JPA to generate CRUD methods.
-- Use H2 database.
-- Configure the OpenAPI version 3 to make your web service standard.
-- Use the Swagger UI to test your web service.
+# TP3: Spring Data REST
 
-- We are going to develop a web service that allows CRUD operations to be performed on articles contained in an H2 database. The class diagram is as follows:
+## Description
+Application e-commerce avec Spring Data REST - endpoints auto-générés, HATEOAS, projections.
 
-  
-  ![image](https://github.com/abbouformations/tpdatarest/assets/135717843/f76b4a32-a0f8-4a4c-ab22-d86d24b71331)
+## Technologies
+- Spring Boot 3.x
+- Spring Data REST
+- H2 Database
+- HAL Format
+
+## Démarrage
+```bash
+mvn spring-boot:run
+```
+Application: **http://localhost:8080**
+
+## Endpoints Principaux
+- `GET /` - Root endpoint (HAL)
+- `GET /ecommerce` - Liste des articles
+- `GET /ecommerce?projection=articleDTO` - Avec projection
+- `GET /ecommerce/search` - Méthodes de recherche
+- `GET /ecommerce/search/byCategorie?categorie=CATEGORIE_1` - Recherche
+- `GET /categories` - Liste des catégories
+- `POST /ecommerce` - Créer un article
+- `PUT /ecommerce/{id}` - Remplacer un article
+- `PATCH /ecommerce/{id}` - Modifier partiellement
+- `DELETE /ecommerce/{id}` - Supprimer
+
+## Console H2
+- URL: http://localhost:8081/h2
+- JDBC: `jdbc:h2:mem:testdb`
+- User: `sa` / Password: (vide)
+
+## Exemple de Requête
+```bash
+curl -X GET http://localhost:8081/ecommerce?projection=articleDTO
+```
+
+## Fonctionnalités Clés
+- ✅ CRUD automatique sans code
+- ✅ HATEOAS (hypermedia links)
+- ✅ Pagination et tri automatiques
+- ✅ Projections personnalisées
+- ✅ Recherches personnalisées
