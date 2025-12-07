@@ -28,13 +28,13 @@ Application: **http://localhost:8080**
 - `DELETE /ecommerce/{id}` - Supprimer
 
 ## Console H2
-- URL: http://localhost:8081/h2
+- URL: http://localhost:8080/h2
 - JDBC: `jdbc:h2:mem:testdb`
 - User: `sa` / Password: (vide)
 
 ## Exemple de Requête
 ```bash
-curl -X GET http://localhost:8081/ecommerce?projection=articleDTO
+curl -X GET http://localhost:8080/ecommerce?projection=articleDTO
 ```
 
 ## Fonctionnalités Clés
